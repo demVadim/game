@@ -12,7 +12,7 @@ int main()
     sf::CircleShape circle(64.0f);
     circle.setOrigin(circle.getGeometricCenter());
     circle.setPosition({ width / 2.0f, height / 2.0f });
-    circle.setFillColor(sf::Color::Green);
+    circle.setFillColor(sf::Color::Blue);
     circle.setOutlineThickness(3.0f);
     circle.setOutlineColor(sf::Color::Red);
     circle.setPointCount(3);
@@ -36,7 +36,7 @@ int main()
             }
 
         }
-        circle.rotate(sf::degrees(1));
+        circle.rotate(sf::degrees(2));
 
         //render
         window->clear(sf::Color(255,165,0));
