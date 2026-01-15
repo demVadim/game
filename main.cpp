@@ -4,9 +4,18 @@
 
 int main()
 {
+    unsigned int width = 640;
+    unsigned int height = 360;
+    sf::RenderWindow* window = new sf::RenderWindow(sf::VideoMode({width,height}), "Title");
+    window->setFramerateLimit(60);
 
-    sf::RenderWindow* window = new sf::RenderWindow(sf::VideoMode({1024,768}), "Title");
-
+    sf::CircleShape circle(64.0f);
+    circle.setOrigin(circle.getGeometricCenter());
+    circle.setPosition({ width / 2.0f, height / 2.0f });
+    circle.setFillColor(sf::Color::Green);
+    circle.setOutlineThickness(3.0f);
+    circle.setOutlineColor(sf::Color::Red);
+    circle.setPointCount(3);
 
     while(window->isOpen())
     {
@@ -27,10 +36,12 @@ int main()
             }
 
         }
+        circle.rotate(sf::degrees(1));
 
         //render
         window->clear(sf::Color(255,165,0));
         //draw
+        window->draw(circle);
 
         window->display();
     }
