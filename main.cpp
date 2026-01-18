@@ -9,17 +9,7 @@ int main()
     sf::RenderWindow* window = new sf::RenderWindow(sf::VideoMode({width,height}), "Title");
     window->setFramerateLimit(60);
 
-<<<<<<< HEAD
-    sf::CircleShape circle(64.0f);
-    circle.setOrigin(circle.getGeometricCenter());
-    circle.setPosition({ width / 2.0f, height / 2.0f });
-    circle.setFillColor(sf::Color::Blue);
-    circle.setOutlineThickness(3.0f);
-    circle.setOutlineColor(sf::Color::Red);
-    circle.setPointCount(3);
-=======
-
->>>>>>> eeb91d90f50f49a352dc6f4bbf7f46a4c6ef721c
+    //todo sprite
 
     while(window->isOpen())
     {
@@ -40,11 +30,6 @@ int main()
             }
 
         }
-<<<<<<< HEAD
-        circle.rotate(sf::degrees(2));
-=======
-
->>>>>>> eeb91d90f50f49a352dc6f4bbf7f46a4c6ef721c
 
         //render
         window->clear(sf::Color(255,165,0));
