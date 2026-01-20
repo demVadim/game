@@ -5,8 +5,7 @@ enum diretions {down,left,up,right};
 
 int main()
 {
-    unsigned int width = 640;
-    unsigned int height = 360;
+    
     sf::RenderWindow* window = new sf::RenderWindow(sf::VideoMode({width,height}), "Title");
     window->setFramerateLimit(60);
 
