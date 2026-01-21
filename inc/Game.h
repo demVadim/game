@@ -17,7 +17,7 @@ private:
     void rendering();
     
 public:
-    Game(/* args */);
+    Game();
     ~Game();
 
     void runing();

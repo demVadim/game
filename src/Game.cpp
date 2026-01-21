@@ -1,31 +1,59 @@
 #include "Game.h"
-inline void Game::initWindow()
-{
+
+inline void Game::initWindow(){
     unsigned int width=640;
     unsigned int height=360;
+    title = "sfml game";
+    vm = sf::VideoMode({width,height});
+    window = new sf::RenderWindow(vm,title);
+    window->setFramerateLimit(60);
 }
 
-void Game::pollEvents()
-{
+void Game::pollEvents(){
+
+    while(const std::optional event = window->pollEvent()){
+            
+        if(event->is<sf::Event::Closed>()){
+                
+                window->close();
+            }
+            else if(const auto* keyPressed = event->getIf<sf::Event::KeyPressed>()){
+
+                if (keyPressed->scancode == sf::Keyboard::Scancode::Escape){
+                   
+                    window->close(); 
+                }
+            }
+
+        }
 }
 
-void Game::updating()
-{
+void Game::updating(){
+
+    pollEvents();
 }
 
-void Game::rendering()
-{
+void Game::rendering(){
+
+        window->clear(sf::Color(255,165,0));
+        //draw
+        window->display();
 }
 
-Game::Game(/* args */)
-{
+Game::Game(){
+    initWindow();
 }
 
-Game::~Game()
-{
+Game::~Game(){
     delete window;
 }
 
-void Game::runing()
-{
+void Game::runing(){
+
+    while(window->isOpen()){
+        
+        updating();
+        rendering();
+    }
+    
 }

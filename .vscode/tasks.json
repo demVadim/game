@@ -5,10 +5,14 @@
             "label": "C/C++: g++.exe build active file",
             "command": "C:\\mingw64\\bin\\g++.exe",
             "args": [
+                
                 "-fdiagnostics-color=always",
                 "-O2",
                 "-DNDEBUG",
                 "-DSFML_STATIC",
+                "-I",
+                "${workspaceFolder}/inc",
+                "src/*.cpp",
                 "-IC:\\SFML-3.0.2_mingw_64\\include",
                 "${file}",
                 "-LC:\\SFML-3.0.2_mingw_64\\lib",
@@ -25,7 +29,8 @@
                 "-lwinpthread",
                 //"-mwindows",
                 "-o",
-                "${fileDirname}\\${fileBasenameNoExtension}.exe"
+                "${fileDirname}/${fileBasenameNoExtension}.exe",
+                
             ],
             "options": {
                 "cwd": "${fileDirname}"
