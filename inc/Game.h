@@ -1,6 +1,7 @@
 #pragma once
 #include <string.h>
 #include <SFML/Graphics.hpp>
+#include "Time.h"
 
 class Game
 {
