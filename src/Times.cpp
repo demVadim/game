@@ -2,7 +2,7 @@
 
 
 
-Times::Times(/* args */)
+Times::Times()
 {
     nextDeltaTime();
 }

@@ -31,6 +31,9 @@ void Game::pollEvents(){
 void Game::updating(){
 
     pollEvents();
+
+    times.nextDeltaTime();
+    std::cout<<times.getDeltaTime()<<std::endl;
 }
 
 void Game::rendering(){

@@ -1,7 +1,9 @@
 #pragma once
 #include <string.h>
+#include <iostream>
+
 #include <SFML/Graphics.hpp>
-#include "Time.h"
+#include "Times.h"
 
 class Game
 {
@@ -11,6 +13,8 @@ private:
     std::string title;
     sf::VideoMode vm;
     sf::RenderWindow* window;
+
+    Times times;
 
     void initWindow();
     void pollEvents();
